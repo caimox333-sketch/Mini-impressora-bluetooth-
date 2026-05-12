@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Impressora Bluetooth</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #050505;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 480px;
+      margin: auto;
+      padding-bottom: 100px;
+    }
+
+    .hero {
+      padding: 20px;
+      background: linear-gradient(180deg,#0b0b0b,#10172a);
+      text-align: center;
+      position: relative;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #00bfff;
+      color: #000;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: 34px;
+      line-height: 1.1;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .subtitle {
+      color: #c9c9c9;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .product-image {
+      width: 100%;
+      border-radius: 28px;
+      margin-top: 10px;
+      box-shadow: 0 0 40px rgba(0,191,255,.25);
+    }
+
+    .stars {
+      margin-top: 18px;
+      color: #ffd700;
+      font-size: 14px;
+    }
+
+    .cta {
+      display: block;
+      width: 100%;
+      padding: 18px;
+      border-radius: 18px;
+      background: linear-gradient(90deg,#00bfff,#4f46e5);
+      text-align: center;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 24px;
+      font-size: 16px;
+      box-shadow: 0 10px 30px rgba(0,191,255,.4);
+    }
+
+    .section {
+      padding: 22px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      padding: 18px;
+      border-radius: 24px;
+      backdrop-filter: blur(12px);
+    }
+
+    .card h3 {
+      margin-top: 10px;
+      font-size: 15px;
+    }
+
+    .card p {
+      margin-top: 8px;
+      color: #bdbdbd;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .demo-image {
+      width: 100%;
+      border-radius: 22px;
+      margin-bottom: 16px;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .step {
+      background: #101010;
+      border-radius: 22px;
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .step span {
+      color: #00bfff;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .step h4 {
+      margin-top: 6px;
+      font-size: 18px;
+    }
+
+    .reviews {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .review {
+      background: rgba(255,255,255,.04);
+      padding: 18px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .review strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .offer {
+      margin: 22px;
+      padding: 24px;
+      border-radius: 28px;
+      background: linear-gradient(180deg,#00bfff,#4f46e5);
+      color: #fff;
+      text-align: center;
+      box-shadow: 0 15px 40px rgba(0,191,255,.35);
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      opacity: .8;
+      margin-bottom: 10px;
+    }
+
+    .new-price {
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .offer ul {
+      list-style: none;
+      margin: 20px 0;
+      line-height: 2;
+    }
+
+    .faq {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .faq-item {
+      background: rgba(255,255,255,.04);
+      border-radius: 18px;
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .faq-item h4 {
+      margin-bottom: 10px;
+      color: #00bfff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #888;
+      font-size: 13px;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 30px;
+      }
+
+      .section-title {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <section class="hero">
+    <div class="badge">🔥 MAIS VENDIDA DO MOMENTO</div>
+
+    <h1>Imprima Diretamente Do Seu Celular Em Segundos</h1>
+
+    <p class="subtitle">
+      A mini impressora bluetooth portátil que viralizou nas redes sociais.
+      Imprima fotos, etiquetas, anotações e muito mais sem precisar de tinta.
+    </p>
+
+    <img class="product-image" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="Mini Impressora">
+
+    <div class="stars">⭐⭐⭐⭐⭐ 4.9 | +18 Mil Clientes</div>
+
+    <a href="#oferta" class="cta">QUERO MINHA IMPRESSORA</a>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Por Que Todo Mundo Está Comprando?</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>📸 Imprima Fotos</h3>
+        <p>Transforme momentos em lembranças físicas instantaneamente.</p>
+      </div>
+
+      <div class="card">
+        <h3>📝 Ideal Para Estudos</h3>
+        <p>Perfeita para anotações, resumos e organização.</p>
+      </div>
+
+      <div class="card">
+        <h3>📲 Bluetooth Instantâneo</h3>
+        <p>Compatível com Android e iPhone.</p>
+      </div>
+
+      <div class="card">
+        <h3>🖨️ Sem Tinta</h3>
+        <p>Tecnologia térmica moderna e econômica.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Veja Como Funciona</h2>
+
+    <img class="demo-image" src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200&auto=format&fit=crop" alt="Demo">
+
+    <div class="steps">
+      <div class="step">
+        <span>PASSO 1</span>
+        <h4>Conecte Via Bluetooth</h4>
+      </div>
+
+      <div class="step">
+        <span>PASSO 2</span>
+        <h4>Escolha Foto Ou Texto</h4>
+      </div>
+
+      <div class="step">
+        <span>PASSO 3</span>
+        <h4>Clique Em Imprimir</h4>
+      </div>
+
+      <div class="step">
+        <span>PASSO 4</span>
+        <h4>Receba Instantaneamente</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Clientes Apaixonados ❤️</h2>
+
+    <div class="reviews">
+      <div class="review">
+        <strong>⭐⭐⭐⭐⭐ Mariana A.</strong>
+        “A qualidade me surpreendeu demais. Muito prática e linda.”
+      </div>
+
+      <div class="review">
+        <strong>⭐⭐⭐⭐⭐ Camila R.</strong>
+        “Uso todos os dias para meus estudos e planner.”
+      </div>
+
+      <div class="review">
+        <strong>⭐⭐⭐⭐⭐ Juliana M.</strong>
+        “Produto premium. Vale muito a pena.”
+      </div>
+    </div>
+  </section>
+
+  <section class="offer" id="oferta">
+    <p class="old-price">DE: R$ 197,90</p>
+
+    <div class="new-price">R$ 69,90</div>
+
+    <p>🔥 Oferta válida somente hoje</p>
+
+    <ul>
+      <li>✅ Frete Grátis</li>
+      <li>✅ Garantia de 7 dias</li>
+      <li>✅ Envio imediato</li>
+      <li>✅ Parcelamento em até 12x</li>
+    </ul>
+
+    <a href="#" class="cta">COMPRAR AGORA</a>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Perguntas Frequentes</h2>
+
+    <div class="faq">
+      <div class="faq-item">
+        <h4>Funciona em iPhone?</h4>
+        <p>Sim. Compatível com Android e iOS.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Precisa de tinta?</h4>
+        <p>Não. A impressão é térmica.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Qual papel utiliza?</h4>
+        <p>Papel térmico específico para mini impressoras.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Mini Impressora Bluetooth — Todos os direitos reservados.
+  </footer>
+
+</div>
+
+</body>
+</html>
